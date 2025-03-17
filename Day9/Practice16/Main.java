@@ -1,7 +1,7 @@
 package Day9.Practice16;
 
 public class Main {
-    final int x=12;
+     final int x=12;
     
         
     private static void xyz(final StringBuilder str,int x){
