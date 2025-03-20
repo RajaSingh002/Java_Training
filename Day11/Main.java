@@ -19,7 +19,7 @@ public class Main {
 
         String [] str={"Apple","Banana","Grapes"};
 
-        List<String> list2=Arrays.asList(str);
+        List<String> list2=Arrays.asList(str);                                                                                                                                    
         System.out.println(list2);
 
         ArrayList <String> list=new ArrayList <>(list2);
