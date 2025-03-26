@@ -1,9 +1,9 @@
 package SealedClass;
-  interface Bike {
+  interface Bike permits {
  Void fun1();
     
  }
- sealed class Human implements Bike permits Manish,Vartika,Anjali {
+ sealed class Human implements Bike permits Manish,Vartika,Anjali{
    
     
     void printName(){
@@ -21,6 +21,14 @@ non-sealed class Manish extends Human
     public void printName()
     {
         System.out.println("Manish Sharma");
+    }
+}
+
+class c extends Manish{
+    @Override
+    public Void fun1() {
+        // TODO Auto-generated method stub
+        return null;
     }
 }
 
