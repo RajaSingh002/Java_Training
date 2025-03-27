@@ -1,0 +1,7 @@
+Efficiency
+The Files.readAllLines() method is optimized for reading files and handles character encoding automatically.
+It uses efficient memory management techniques to read the file contents into memory, making it suitable for small to medium-sized files. For larger files, it is advisable to use streaming methods, but for most common use cases, Files.readAllLines() provides an efficient solution.
+Error Handling
+Traditional file reading methods often require extensive error handling. 
+For example, using BufferedReader involves handling potential FileNotFoundException and IOException. 
+The Files.readAllLines() method simplifies error handling by throwing an IOException if an error occurs, allowing developers to manage exceptions in a cleaner and more concise manner.
