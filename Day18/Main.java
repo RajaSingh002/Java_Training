@@ -1,3 +1,4 @@
+package Day18;
 
 abstract class SwitchCircuit {
     protected boolean isOn;
