@@ -1,33 +1,67 @@
-class Parent {
-    int i=10;
-    Parent(){
-        System.out.println("Parent constructor is called");
-        fun();
+
+abstract class SwitchCircuit {
+    protected boolean isOn;
+
+    public void turnOn() {
+        isOn = true;
+        System.out.println("switch is on");
     }
 
-    void fun(){
-        System.out.println("fun is called "+i);
+    public void turnOff() {
+        isOn = false;
+        System.out.println("switch is off");
     }
+
+    public abstract void speedUp();
+
+    public abstract void speedDown();
 }
 
+class FanCircuit extends SwitchCircuit {
+    private int speed;
+    private static final int MAX_SPEED = 5;
+    private static final int MIN_SPEED = 0;
 
-
-
-
-
-
-public class Main extends Parent {
-
-    int i=20;
-    Main(){
-        System.out.println("child constructor is called");
+    public FanCircuit() {
+        this.speed = 0;
     }
 
     @Override
-    void fun(){
-        System.out.println("child fun is called "+i);
+    public void speedUp() {
+        if (isOn) {
+            if (speed < MAX_SPEED) {
+                speed++;
+                System.out.println("Fan speed increased to: " + speed);
+            } else {
+                System.out.println("Fan is already at max speed!");
+            }
+        } else {
+            System.out.println("Cannot increase speed. The switch is OFF.");
+        }
     }
+
+    @Override
+    public void speedDown() {
+        if (isOn) {
+            if (speed > MIN_SPEED) {
+                speed--;
+                System.out.println("Fan speed decreased to: " + speed);
+            } else {
+                System.out.println("Fan is already at the minimum speed");
+            }
+        } else {
+            System.out.println("Cannot decrease speed. The switch is OFF.");
+        }
+    }
+}
+
+public class Main {
     public static void main(String[] args) {
-        Main tt=new Main();
+        SwitchCircuit fan = new FanCircuit();
+        fan.turnOn();
+        fan.speedUp();
+        fan.speedUp();
+        fan.speedDown();
+        fan.turnOff();
     }
 }

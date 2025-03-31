@@ -3,9 +3,9 @@ import java.io.File;
 import java.nio.file.*;
 import java.util.*;
 
-public class Main {
+public abstract class Main {
 
-    
+   abstract void fun();
     private static void testFile(String filename){
         Path path=Paths.get(filename);
         try {
