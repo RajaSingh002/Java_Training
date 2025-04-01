@@ -1,6 +1,6 @@
 package Day18;
 
-abstract class SwitchCircuit {
+abstract class Circuit {
     protected boolean isOn;
 
     public void turnOn() {
@@ -18,10 +18,10 @@ abstract class SwitchCircuit {
     public abstract void speedDown();
 }
 
-class FanCircuit extends SwitchCircuit {
+class FanCircuit extends Circuit {
     private int speed;
-    private static final int MAX_SPEED = 5;
-    private static final int MIN_SPEED = 0;
+    private static final int maxSpeed = 5;
+    private static final int minspeed = 0;
 
     public FanCircuit() {
         this.speed = 0;
@@ -30,7 +30,7 @@ class FanCircuit extends SwitchCircuit {
     @Override
     public void speedUp() {
         if (isOn) {
-            if (speed < MAX_SPEED) {
+            if (speed < maxSpeed) {
                 speed++;
                 System.out.println("Fan speed increased to: " + speed);
             } else {
@@ -44,7 +44,7 @@ class FanCircuit extends SwitchCircuit {
     @Override
     public void speedDown() {
         if (isOn) {
-            if (speed > MIN_SPEED) {
+            if (speed > minspeed) {
                 speed--;
                 System.out.println("Fan speed decreased to: " + speed);
             } else {
@@ -58,7 +58,7 @@ class FanCircuit extends SwitchCircuit {
 
 public class Main {
     public static void main(String[] args) {
-        SwitchCircuit fan = new FanCircuit();
+        Circuit fan = new FanCircuit();
         fan.turnOn();
         fan.speedUp();
         fan.speedUp();
