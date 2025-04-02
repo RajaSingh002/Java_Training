@@ -1,0 +1,66 @@
+package SwitchCircuit;
+
+public class FanSwitch {
+    private boolean isOn;
+    private int speed;
+    private final Wire wire;
+
+    private static final int MinSpeed = 0;
+    private static final int MaxSpeed = 5;
+
+    public FanSwitch(Wire wire) {
+        this.wire = wire;
+        this.isOn = false;
+        this.speed = 0;
+    }
+
+    public void turnOn() {
+        if (wire.getVoltage() > 0 && wire.getCurrent() > 0) {
+            isOn = true;
+            speed = 1;
+            System.out.println("fan is at speed 1.");
+        } else {
+            System.out.println("Cannot turnon Fan.");
+        }
+    }
+
+    public void turnOff() {
+        isOn = false;
+        speed = 0;
+        System.out.println("Fan is turn off.");
+    }
+
+    public void speedUp() {
+        if (!isOn) {
+            System.out.println("cannot increase speed, fan is off ");
+            return;
+        }
+        if (speed < MaxSpeed) {
+            speed++;
+            System.out.println("Fan speed increased to " + speed);
+        } else {
+            System.out.println("Fan is already at MAX speed!");
+        }
+    }
+
+    public void speedDown() {
+        if (!isOn) {
+            System.out.println("Cannot decrease speed. Fan is OFF!");
+            return;
+        }
+        if (speed > MinSpeed) {
+            speed--;
+            System.out.println("Fan speed decreased to " + speed);
+        } else {
+            System.out.println("Fan is already at MIN speed!");
+        }
+    }
+
+    public boolean isOn() {
+        return isOn;
+    }
+
+    public int getSpeed() {
+        return speed;
+    }
+}

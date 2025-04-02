@@ -57,7 +57,8 @@ class FanCircuit extends Circuit {
 }
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main1(String[] args) {
+        Main m=new Main();
         Circuit fan = new FanCircuit();
         fan.turnOn();
         fan.speedUp();
