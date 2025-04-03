@@ -12,15 +12,15 @@ public class Switch {
     public void turnOn() {
         if (wire.getVoltage() > 0 && wire.getCurrent() > 0) {
             isOn = true;
-            System.out.println("Switch is TURNED ON.");
+            System.out.println("Switch is Turned on");
         } else {
-            System.out.println("Cannot turn ON. No power in the wire!");
+            System.out.println("Cannot turn On. No Power in Wire");
         }
     }
 
     public void turnOff() {
         isOn = false;
-        System.out.println("Switch is TURNED OFF.");
+        System.out.println("Switch is Turned off");
     }
 
     public boolean isOn() {

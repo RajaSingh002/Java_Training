@@ -39,20 +39,20 @@ public class FanSwitch {
             speed++;
             System.out.println("Fan speed increased to " + speed);
         } else {
-            System.out.println("Fan is already at MAX speed!");
+            System.out.println("Fan is already at max speed");
         }
     }
 
     public void speedDown() {
         if (!isOn) {
-            System.out.println("Cannot decrease speed. Fan is OFF!");
+            System.out.println("Cannot decrease speed. fan is off");
             return;
         }
         if (speed > MinSpeed) {
             speed--;
             System.out.println("Fan speed decreased to " + speed);
         } else {
-            System.out.println("Fan is already at MIN speed!");
+            System.out.println("Fan is already at min speed");
         }
     }
 
