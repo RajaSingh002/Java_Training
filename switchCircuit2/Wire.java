@@ -11,7 +11,7 @@ public abstract class Wire {
         this.current=5;
         this.resistance=1;
     }
-
+    
 
     protected double getVoltage() {
         return voltage;

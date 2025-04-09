@@ -1,9 +1,5 @@
 *.class
-<<<<<<< HEAD
-.vscode/
-gitPactice/
-=======
 gitPactice
 .vscode/
 
->>>>>>> bug-fix
+lib/

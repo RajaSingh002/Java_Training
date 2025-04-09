@@ -1,11 +1,9 @@
-package SwitchCircuit;
-
-import Day10.Test.client;
+package switchCircuit2;
 
 public class Main {
     public static void main(String[] args) {
         Client c=new Client();
-          c.start();
-          
+        c.start();
     }
+    
 }

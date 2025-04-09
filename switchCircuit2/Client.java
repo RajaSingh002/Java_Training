@@ -1,15 +1,14 @@
-package SwitchCircuit;
+package switchCircuit2;
 
 import java.util.Scanner;
 
 public class Client {
+     private Scanner sc = new Scanner(System.in);
 
-    private Scanner sc = new Scanner(System.in);
+   
 
-    private Wire wire = Wire.getInstance();
-
-    private Switch mySwitch = new Switch(wire);
-    private FanSwitch myFanSwitch = new FanSwitch(wire);
+    private Switch mySwitch = new Switch();
+    private FanSwitch myFanSwitch = new FanSwitch();
 
     public void start() {
         while (true) {
@@ -82,5 +81,4 @@ public class Client {
         }
 
     }
-
 }
